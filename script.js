@@ -38,54 +38,69 @@ const oPontSzoveg = document.getElementById("oPont");
 const xKartya = document.getElementById("xKartya");
 const oKartya = document.getElementById("oKartya");
 
-function aktualisNev() {
+function aktualisNev() 
+{
   let nev;
 
-  if (aktualisJatekos === "X") {
+  if (aktualisJatekos === "X") 
+  {
     nev = xNevMezo.value.trim();
-    if (nev === "") {
+    if (nev === "") 
+    {
       nev = "X játékos";
     }
-  } else {
+  } 
+  else 
+  {
     nev = oNevMezo.value.trim();
-    if (nev === "") {
+    if (nev === "") 
+    {
       nev = "O játékos";
     }
   }
   return nev;
 }
 
-function kovetkezoKiirasa() {
+function kovetkezoKiirasa() 
+{
   allapotSzoveg.textContent = aktualisNev() + " köre jön (" + aktualisJatekos + ")";
   jatekosKiemeles();
 }
 
-function jatekosKiemeles() {
+function jatekosKiemeles() 
+{
   xKartya.classList.remove("soron-van", "gyoztes");
   oKartya.classList.remove("soron-van", "gyoztes");
 
-  if (vegeAJatek === false) {
-    if (aktualisJatekos === "X") {
+  if (vegeAJatek === false) 
+  {
+    if (aktualisJatekos === "X") 
+    {
       xKartya.classList.add("soron-van");
-    } else {
+    } 
+    else 
+    {
       oKartya.classList.add("soron-van");
     }
   }
 }
 
-function mezoraKattintas() {
-  if (varAGepre === true) {
+function mezoraKattintas() 
+{
+  if (varAGepre === true) 
+  {
     return;
   }
 
-  // Melyik mezőre kattintottunk? (0-tól 8-ig)
   let sorszam = Number(this.dataset.sorszam);
   lepes(sorszam);
 }
 
-function lepes(sorszam) {
+function lepes(sorszam) 
+{
   // Ha a mező már foglalt, vagy vége a játéknak, nem csinálunk semmit
-  if (tabla[sorszam] !== "" || vegeAJatek === true) {
+  if (tabla[sorszam] !== "" || vegeAJatek === true) 
+  {
     return;
   }
 
@@ -96,21 +111,28 @@ mezok[sorszam].disabled = true;
 
 let nyeroSor = keresNyeroSort();
 
-if (nyeroSor !== null) {
+if (nyeroSor !== null) 
+{
   nyertValaki(nyeroSor);
-} else if (tablaTeleVan()) {
+} 
+else if (tablaTeleVan()) 
+{
   dontetlenLett();
-} else {
+} 
+else 
+{
   jatekosValtas();
 
-  if (jatekMod === "egyjatekos" && aktualisJatekos === "O") {
+  if (jatekMod === "egyjatekos" && aktualisJatekos === "O") 
+  {
     gepIndit();
   }
   }
 }
 
 // Végignézi a 8 kombinációt. Ha valamelyik mind a 3 mezője ugyanaz (és nem üres), visszaadja azt a kombinációt. Ha nincs nyertes, null-t ad vissza.
-function keresNyeroSort() {
+function keresNyeroSort() 
+{
   for (let i = 0; i < nyeroKombinaciok.length; i++) 
   {
     let kombinacio = nyeroKombinaciok[i];
@@ -126,7 +148,8 @@ function keresNyeroSort() {
   return null;
 }
 
-function tablaTeleVan() {
+function tablaTeleVan() 
+{
   for (let i = 0; i < tabla.length; i++) 
   {
     if (tabla[i] === "") 
@@ -230,7 +253,6 @@ if(valasztott === -1 && tabla[4] === "")
 {
   valasztott = 4;
 }
-
 //Egyébként egy véletlenszerű üres mezőt
 if(valasztott === -1) 
 {
