@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="jatek">
+
+    <header>
+      <h1>Tic-Tac-Toe</h1>
+      <p class="alcim">Amőba</p>
+    </header>
+
+    <div class="modok">
+      <button id="egyjatekosGomb" class="mod">1 játékos</button>
+      <button id="ketjatekosGomb" class="mod aktiv">2 játékos</button>
+    </div>
+
+    <div class="jatekosok">
+      <div class="jatekos x-jatekos" id="xKartya">
+        <div class="jel">X</div>
+        <input type="text" id="xNev" value="1. játékos" maxlength="15" aria-label="X játékos neve">
+        <div class="pont-szam" id="xPont">0</div>
+        <div class="pont-felirat">pont</div>
+      </div>
+
+      <div class="jatekos o-jatekos" id="oKartya">
+        <div class="jel">O</div>
+        <input type="text" id="oNev" value="2. játékos" maxlength="15" aria-label="O játékos neve">
+        <div class="pont-szam" id="oPont">0</div>
+        <div class="pont-felirat">pont</div>
+      </div>
+    </div>
+
+    <h2 id="allapot"></h2>
+
+    <div class="tabla">
+      <button class="mezo" data-sorszam="0"></button>
+      <button class="mezo" data-sorszam="1"></button>
+      <button class="mezo" data-sorszam="2"></button>
+      <button class="mezo" data-sorszam="3"></button>
+      <button class="mezo" data-sorszam="4"></button>
+      <button class="mezo" data-sorszam="5"></button>
+      <button class="mezo" data-sorszam="6"></button>
+      <button class="mezo" data-sorszam="7"></button>
+      <button class="mezo" data-sorszam="8"></button>
+    </div>
+
+    <button id="ujrainditasGomb">Újraindítás</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
